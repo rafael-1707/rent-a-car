@@ -1,3 +1,21 @@
+# Cadastro de usuário
+
+- Deve ser possível cadastrar um novo usuário.
+
+#
+
+## Parâmetros Obrigatorios
+
+- name (`Fulano`).
+- email (`test@mail.com`).
+- password (`123Abcd`).
+- driver_license (`123456789`).
+
+#
+
+- Não deve ser possível cadastrar um usuário com um email existente.
+- Não deve ser possível cadastrar um usuário caso a senha não atenda aos requisitos.
+
 # Cadastro de carro
 
 **RF**

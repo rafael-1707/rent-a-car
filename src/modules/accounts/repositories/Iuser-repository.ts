@@ -7,5 +7,5 @@ export interface IUserRepository {
   updateById(id: number, data: Users): Promise<void>;
   deleteById(id: number): Promise<void>;
   findById(id: number): Promise<Users>;
-  list(): Promise<Users[]>;
+  listAll(): Promise<Users[]>;
 }

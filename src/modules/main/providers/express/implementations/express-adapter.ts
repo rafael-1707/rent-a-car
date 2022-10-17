@@ -1,12 +1,12 @@
 import { Request, Response } from "express";
 import { CategoriesController } from "../../../../cars/usecases/create-category/categories-controller";
 import { SpecificationController } from "../../../../cars/usecases/create-specification.ts/specification-controller";
-import { ListCategoriesController } from "../../../../cars/usecases/list-categories/list-categories-controller";
 import { UserController } from "../../../../accounts/usecases/create-users/create-users-controller";
 import { AuthenticationController } from "../../../../accounts/usecases/authentication-user/authentication-controller";
 import { HttpRequest } from "../http";
 import { UpdateUserController } from "../../../../accounts/usecases/update-users/update-controller";
 import { DeleteUserController } from "../../../../accounts/usecases/delete-users/delete-controller";
+import { ListUserController } from "../../../../accounts/usecases/read-users/list-all/list-controller";
 
 export const CategoriesRoutesAdapter = (controller: CategoriesController) => {
   return async (req: Request, res: Response) => {
@@ -26,13 +26,6 @@ export const SpecificationsRoutesAdapter = (
       body: req.body,
     };
     const httpResponse = await specification.handle(httpRequest);
-    res.status(httpResponse.statusCode).json(httpResponse.body);
-  };
-};
-
-export const ListRoutesAdapter = (list: ListCategoriesController) => {
-  return async (req: Request, res: Response) => {
-    const httpResponse = await list.handle();
     res.status(httpResponse.statusCode).json(httpResponse.body);
   };
 };
@@ -74,6 +67,13 @@ export const DeleteRoutesAdapter = (user: DeleteUserController) => {
       params: req.params,
     };
     const httpResponse = await user.handle(httpRequest);
+    res.status(httpResponse.statusCode).json(httpResponse.body);
+  };
+};
+
+export const ListRoutesAdapter = (user: ListUserController) => {
+  return async (req: Request, res: Response) => {
+    const httpResponse = await user.handle();
     res.status(httpResponse.statusCode).json(httpResponse.body);
   };
 };
