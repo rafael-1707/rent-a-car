@@ -18,6 +18,7 @@ usersRoutes
   .post("/login", AuthenticationRoutesAdapter(authenticationController))
   .patch("/update/:id", UpdateRoutesAdapter(updateUserController))
   .delete("/delete/:id", DeleteRoutesAdapter(deleteUserController))
-  .get("/list", ListRoutesAdapter(listAllUsersController));
+  .get("/list", ListRoutesAdapter(listAllUsersController))
+  .get("/list/:id", ListRoutesAdapter(listAllUsersController));
 
 export { usersRoutes };
