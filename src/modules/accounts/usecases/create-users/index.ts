@@ -6,13 +6,12 @@ import { ValidatorEmailAdapter } from "../../providers/validator/implementations
 import { PasswordIsValid } from "../../helpers/password-is-valid";
 
 const usersRepository = new PrismaUsersRepository();
-const usersUseCase = new UsersUseCase(usersRepository);
 const bcryptAdapter = new BcryptAdapter(12);
+const usersUseCase = new UsersUseCase(usersRepository, bcryptAdapter);
 const validatorEmailAdapter = new ValidatorEmailAdapter();
 const passwordIsValid = new PasswordIsValid();
 const userController = new UserController(
   usersUseCase,
-  bcryptAdapter,
   validatorEmailAdapter,
   passwordIsValid
 );

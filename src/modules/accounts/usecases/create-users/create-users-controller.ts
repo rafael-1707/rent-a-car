@@ -5,14 +5,12 @@ import {
   HttpResponse,
 } from "../../../main/providers/express/http";
 import { UsersUseCase } from "./create-users-usecase";
-import { Iencrypt } from "../../providers/cryptography/Iencrypt";
 import { IvalidatorEmail } from "../../providers/validator/Ivalidator-email";
 import { PasswordIsValid } from "../../helpers/password-is-valid";
 
 export class UserController {
   constructor(
     private usersUseCase: UsersUseCase,
-    private encrypt: Iencrypt,
     private validatorEmail: IvalidatorEmail,
     private passwordIsValid: PasswordIsValid
   ) {}
@@ -34,12 +32,10 @@ export class UserController {
       return badRequest(new MissingParamError(password));
     }
 
-    const hashedPassword = await this.encrypt.hash(password);
-
     const create = await this.usersUseCase.execute({
       name,
       email,
-      password: hashedPassword,
+      password,
       driver_license,
     });
 
