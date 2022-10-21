@@ -1,9 +1,9 @@
 import {
   HttpRequest,
   HttpResponse,
-} from "../../../main/providers/express/http";
-import { MissingParamError } from "../../../shared/errors/missing-params-error";
-import { badRequest, ok } from "../../../shared/helpers/http-helper";
+} from "../../../../main/providers/express/http";
+import { MissingParamError } from "../../../../shared/errors/missing-params-error";
+import { badRequest, ok } from "../../../../shared/helpers/http-helper";
 import { AuthenticationUseCase } from "./authentication-usecase";
 import { ValidatorEmailAdapter } from "../../providers/validator/implementations/validator-adapter";
 

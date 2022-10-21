@@ -1,8 +1,8 @@
-import { created } from "../../../shared/helpers/http-helper";
+import { created } from "../../../../shared/helpers/http-helper";
 import {
   HttpRequest,
   HttpResponse,
-} from "../../../main/providers/express/http";
+} from "../../../../main/providers/express/http";
 import { ImportCategoryUseCase } from "./import-category-usecase";
 
 export class ImportCategoryController {

@@ -1,10 +1,10 @@
 import {
   HttpRequest,
   HttpResponse,
-} from "../../../main/providers/express/http";
+} from "../../../../main/providers/express/http";
 import { CreateCategoryService } from "./category-usecase";
-import { badRequest, created } from "../../../shared/helpers/http-helper";
-import { MissingParamError } from "../../../shared/errors/missing-params-error";
+import { badRequest, created } from "../../../../shared/helpers/http-helper";
+import { MissingParamError } from "../../../../shared/errors/missing-params-error";
 
 export class CategoriesController {
   constructor(private createCategoryService: CreateCategoryService) {}

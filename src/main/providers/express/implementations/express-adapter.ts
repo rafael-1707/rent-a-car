@@ -1,13 +1,13 @@
 import { Request, Response } from "express";
-import { CategoriesController } from "../../../../cars/usecases/create-category/categories-controller";
-import { SpecificationController } from "../../../../cars/usecases/create-specification.ts/specification-controller";
-import { UserController } from "../../../../accounts/usecases/create-users/create-users-controller";
-import { AuthenticationController } from "../../../../accounts/usecases/authentication-user/authentication-controller";
+import { CategoriesController } from "../../../../modules/cars/usecases/create-category/categories-controller";
+import { SpecificationController } from "../../../../modules/cars/usecases/create-specification/specification-controller";
+import { UserController } from "../../../../modules/accounts/usecases/create-users/create-users-controller";
+import { AuthenticationController } from "../../../../modules/accounts/usecases/authentication-user/authentication-controller";
 import { HttpRequest } from "../http";
-import { UpdateUserController } from "../../../../accounts/usecases/update-users/update-controller";
-import { DeleteUserController } from "../../../../accounts/usecases/delete-users/delete-controller";
-import { ListUserController } from "../../../../accounts/usecases/read-users/list-all/list-controller";
-import { GetByIdUserController } from "../../../../accounts/usecases/read-users/get-by-id-users/get-by-id-controller";
+import { UpdateUserController } from "../../../../modules/accounts/usecases/update-users/update-controller";
+import { DeleteUserController } from "../../../../modules/accounts/usecases/delete-users/delete-controller";
+import { ListUserController } from "../../../../modules/accounts/usecases/read-users/list-all/list-controller";
+import { GetByIdUserController } from "../../../../modules/accounts/usecases/read-users/get-by-id-users/get-by-id-controller";
 
 export const CategoriesRoutesAdapter = (controller: CategoriesController) => {
   return async (req: Request, res: Response) => {

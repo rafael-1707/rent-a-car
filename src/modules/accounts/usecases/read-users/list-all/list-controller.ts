@@ -1,8 +1,8 @@
 import {
   HttpRequest,
   HttpResponse,
-} from "../../../../main/providers/express/http";
-import { ok } from "../../../../shared/helpers/http-helper";
+} from "../../../../../main/providers/express/http";
+import { ok } from "../../../../../shared/helpers/http-helper";
 import { ListAllUsersUseCase } from "./list-usecase";
 
 export class ListUserController {

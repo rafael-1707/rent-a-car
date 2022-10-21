@@ -6,11 +6,11 @@ import {
   UsersRoutesAdapter,
 } from "../providers/express/implementations/express-adapter";
 import { AuthenticationRoutesAdapter } from "../providers/express/implementations/express-adapter";
-import { userController } from "../../accounts/usecases/create-users";
-import { authenticationController } from "../../accounts/usecases/authentication-user";
-import { updateUserController } from "../../accounts/usecases/update-users";
-import { deleteUserController } from "../../accounts/usecases/delete-users";
-import { listAllUsersController } from "../../accounts/usecases/read-users/list-all";
+import { userController } from "../../modules/accounts/usecases/create-users";
+import { authenticationController } from "../../modules/accounts/usecases/authentication-user";
+import { updateUserController } from "../../modules/accounts/usecases/update-users";
+import { deleteUserController } from "../../modules/accounts/usecases/delete-users";
+import { listAllUsersController } from "../../modules/accounts/usecases/read-users/list-all";
 const usersRoutes = Router();
 
 usersRoutes

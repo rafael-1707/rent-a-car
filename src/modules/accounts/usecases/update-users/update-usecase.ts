@@ -1,5 +1,5 @@
-import { EmailExistsError } from "../../../shared/errors/users-exists-error";
-import { badRequest } from "../../../shared/helpers/http-helper";
+import { EmailExistsError } from "../../../../shared/errors/users-exists-error";
+import { badRequest } from "../../../../shared/helpers/http-helper";
 import { IUserRepository } from "../../repositories/Iuser-repository";
 
 type IRequest = {

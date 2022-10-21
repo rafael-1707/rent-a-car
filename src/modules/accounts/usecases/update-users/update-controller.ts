@@ -1,9 +1,9 @@
 import {
   HttpRequest,
   HttpResponse,
-} from "../../../main/providers/express/http";
-import { MissingParamError } from "../../../shared/errors/missing-params-error";
-import { badRequest, ok } from "../../../shared/helpers/http-helper";
+} from "../../../../main/providers/express/http";
+import { MissingParamError } from "../../../../shared/errors/missing-params-error";
+import { badRequest, ok } from "../../../../shared/helpers/http-helper";
 import { UpdateUserUseCase } from "./update-usecase";
 import { Iencrypt } from "../../../accounts/providers/cryptography/Iencrypt";
 import { IvalidatorEmail } from "../../providers/validator/Ivalidator-email";

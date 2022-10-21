@@ -1,8 +1,8 @@
 import { Router } from "express";
 import multer from "multer";
 import { CategoriesRoutesAdapter } from "../providers/express/implementations/express-adapter";
-import { categoriesController } from "../../cars/usecases/create-category/index";
-import { importCategoryController } from "../../cars/usecases/import-category/index";
+import { categoriesController } from "../../modules/cars/usecases/create-category/index";
+import { importCategoryController } from "../../modules/cars/usecases/import-category/index";
 import { ensureAuthenticated } from "../middlewares/ensureAuthenticated";
 
 const categoriesRoutes = Router();

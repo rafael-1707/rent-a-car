@@ -1,5 +1,5 @@
-import { ok } from "../../../shared/helpers/http-helper";
-import { HttpResponse } from "../../../main/providers/express/http";
+import { ok } from "../../../../shared/helpers/http-helper";
+import { HttpResponse } from "../../../../main/providers/express/http";
 import { ListCategoriesUseCase } from "./list-categories-usecase";
 
 export class ListCategoriesController {

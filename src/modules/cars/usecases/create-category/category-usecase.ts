@@ -1,6 +1,6 @@
 import { ICategoriesRepository } from "../../repositories/Icategories-repository";
-import { CategoryExistsError } from "../../../shared/errors/category-exists-error";
-import { badRequest } from "../../../shared/helpers/http-helper";
+import { CategoryExistsError } from "../../../../shared/errors/category-exists-error";
+import { badRequest } from "../../../../shared/helpers/http-helper";
 
 type IRequest = {
   name: string;

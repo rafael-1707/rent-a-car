@@ -1,5 +1,5 @@
 import { IUserRepository } from "../../repositories/Iuser-repository";
-import { EmailExistsError } from "../../../shared/errors/users-exists-error";
+import { EmailExistsError } from "../../../../shared/errors/users-exists-error";
 import { Iencrypt } from "../../providers/cryptography/Iencrypt";
 
 type IRequest = {
