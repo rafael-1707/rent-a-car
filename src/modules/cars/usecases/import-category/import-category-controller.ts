@@ -1,4 +1,4 @@
-import { created } from "../../../../shared/helpers/http-helper";
+import { Response } from "../../../../shared/helpers/http-helper";
 import {
   HttpRequest,
   HttpResponse,
@@ -12,6 +12,6 @@ export class ImportCategoryController {
     const { file } = request;
 
     this.importCategoryUseCase.execute(file);
-    return created("Import done");
+    return Response.created("Import done");
   }
 }

@@ -1,36 +1,60 @@
 import { HttpResponse } from "../../main/providers/express/http";
 
-export const badRequest = (error: Error): HttpResponse => ({
-  statusCode: 400,
-  body: error,
-});
+export class Response {
+  static ok(data: any): HttpResponse {
+    return {
+      statusCode: 200,
+      body: data,
+    };
+  }
 
-export const created = (data: any): HttpResponse => ({
-  statusCode: 201,
-  body: data,
-});
+  static created(data: any): HttpResponse {
+    return {
+      statusCode: 201,
+      body: data,
+    };
+  }
 
-export const ok = (data: any): HttpResponse => ({
-  statusCode: 200,
-  body: data,
-});
+  static NoContent(): HttpResponse {
+    return {
+      statusCode: 204,
+    };
+  }
 
-export const serverError = (error: Error): HttpResponse => ({
-  statusCode: 500,
-  body: error,
-});
+  static badRequest(error: Error): HttpResponse {
+    return {
+      statusCode: 400,
+      body: {
+        error: error.message,
+      },
+    };
+  }
 
-export const unauthorized = (error: Error): HttpResponse => ({
-  statusCode: 401,
-  body: error,
-});
+  static unauthorized(error: Error): HttpResponse {
+    return {
+      statusCode: 401,
+      body: error,
+    };
+  }
 
-export const forbidden = (error: Error): HttpResponse => ({
-  statusCode: 403,
-  body: error,
-});
+  static forbidden(error: Error): HttpResponse {
+    return {
+      statusCode: 403,
+      body: error,
+    };
+  }
 
-export const notFound = (error: Error): HttpResponse => ({
-  statusCode: 404,
-  body: error,
-});
+  static notFound(error: Error): HttpResponse {
+    return {
+      statusCode: 404,
+      body: error,
+    };
+  }
+
+  static serverError(error: Error): HttpResponse {
+    return {
+      statusCode: 500,
+      body: error,
+    };
+  }
+}

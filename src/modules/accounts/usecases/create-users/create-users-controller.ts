@@ -1,5 +1,5 @@
 import { MissingParamError } from "../../../../shared/errors/missing-params-error";
-import { badRequest, created } from "../../../../shared/helpers/http-helper";
+import { Response } from "../../../../shared/helpers/http-helper";
 import {
   HttpRequest,
   HttpResponse,
@@ -19,17 +19,17 @@ export class UserController {
     const requireFields = ["name", "email", "password", "driver_license"];
     for (const key of requireFields) {
       if (!request.body[key]) {
-        return badRequest(new MissingParamError(key));
+        return Response.badRequest(new MissingParamError(key));
       }
     }
 
     const { name, email, password, driver_license } = request.body;
 
     if (!this.validatorEmail.isValid(email))
-      return badRequest(new MissingParamError(email));
+      return Response.badRequest(new MissingParamError(email));
 
     if (!this.passwordIsValid.validate(password)) {
-      return badRequest(new MissingParamError(password));
+      return Response.badRequest(new MissingParamError(password));
     }
 
     const create = await this.usersUseCase.execute({
@@ -39,6 +39,6 @@ export class UserController {
       driver_license,
     });
 
-    return created(create);
+    return Response.created(create);
   }
 }

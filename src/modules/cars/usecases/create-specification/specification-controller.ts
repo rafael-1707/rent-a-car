@@ -3,7 +3,7 @@ import {
   HttpResponse,
 } from "../../../../main/providers/express/http";
 import { CreateSpecificationService } from "./specification-usecase";
-import { badRequest, created } from "../../../../shared/helpers/http-helper";
+import { Response } from "../../../../shared/helpers/http-helper";
 import { MissingParamError } from "../../../../shared/errors/missing-params-error";
 
 export class SpecificationController {
@@ -13,7 +13,7 @@ export class SpecificationController {
     const requireFields = ["name", "description"];
     for (const key of requireFields) {
       if (!request.body[key]) {
-        return badRequest(new MissingParamError(key));
+        return Response.badRequest(new MissingParamError(key));
       }
     }
 
@@ -23,6 +23,6 @@ export class SpecificationController {
       description,
     });
 
-    return created(create);
+    return Response.created(create);
   }
 }

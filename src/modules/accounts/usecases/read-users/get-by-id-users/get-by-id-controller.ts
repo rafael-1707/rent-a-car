@@ -2,7 +2,7 @@ import {
   HttpRequest,
   HttpResponse,
 } from "../../../../../main/providers/express/http";
-import { ok } from "../../../../../shared/helpers/http-helper";
+import { Response } from "../../../../../shared/helpers/http-helper";
 import { GetByIdUserUseCase } from "./get-by-id-usecase";
 
 export class GetByIdUserController {
@@ -11,6 +11,6 @@ export class GetByIdUserController {
     const id = request.params;
     const users = await this.getByIdUserUseCase.execute(parseInt(id.id));
 
-    return ok(users);
+    return Response.ok(users);
   }
 }

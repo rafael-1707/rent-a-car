@@ -1,6 +1,5 @@
 import { ICategoriesRepository } from "../../repositories/Icategories-repository";
 import { CategoryExistsError } from "../../../../shared/errors/category-exists-error";
-import { badRequest } from "../../../../shared/helpers/http-helper";
 
 type IRequest = {
   name: string;
@@ -15,7 +14,7 @@ export class CreateCategoryService {
       name
     );
 
-    if (categoryAlreadyExists) return badRequest(new CategoryExistsError(name));
+    if (categoryAlreadyExists) return new CategoryExistsError(name);
 
     await this.categoriesRepository.createCategory({
       name,

@@ -1,80 +1,118 @@
-# Cadastro de usuário
+## Cadastro de usuário
+
+**Requisitos Funcionais**
 
 - Deve ser possível cadastrar um novo usuário.
 
-#
-
-## Parâmetros Obrigatorios
+**Parâmetros Obrigatorios**
 
 - name (`Fulano`).
 - email (`test@mail.com`).
 - password (`123Abcd`).
 - driver_license (`123456789`).
 
-#
+**Regras de Negócio**
 
 - Não deve ser possível cadastrar um usuário com um email existente.
+- Não deve ser possível cadastrar um usuário com um email inválido.
 - Não deve ser possível cadastrar um usuário caso a senha não atenda aos requisitos.
 
-# Cadastro de carro
+#
 
-**RF**
+## Cadastro de carro
 
-- Deve ser possível cadastrar um novo carro.
+**Requisitos Funcionais**
 
-**RN**
+- Deve ser possível cadastrar um carro.
+
+**Parâmetros Obrigatorios**
+
+**Regras de Negócio**
 
 - Não deve ser possível cadastrar um carro com uma placa já existente.
+- Não deve ser possível alterar a placa de um carro.
 - O carro deve ser cadastrado, por padrão, com disponibilidade.
 - O usuário responsável pelo cadastro deve ser um usuário administrador.
 
-# Listagem de carros
+#
 
-**RF**
+## Cadastro de Especificação do carro
+
+**Regras Funcionais**
+
+- Deve ser possível cadastrar uma especificação para um carro
+
+**Parâmetros Obrigatorios**
+
+- name (`string`).
+- description (`string`).
+
+**Regras de Negócio**
+
+- Não deve ser possível cadastrar uma especificação para um carro não cadastrado.
+- Não deve ser possível cadastrar uma especificação já existente para o mesmo carro.
+- O usuário responsável pelo cadastro deve ser um usuário administrador.
+
+#
+
+## Cadastro de categoria do carro
+
+**Regras Funcionais**
+
+- Deve ser possível cadastrar uma categoria para um carro
+
+**Parâmetros Obrigatorios**
+
+- name (`string`).
+- description (`string`).
+
+**Regras de Negócio**
+
+- Não deve ser possível cadastrar uma categoria para um carro não cadastrado.
+- Não deve ser possível cadastrar uma categoria já existente para o mesmo carro.
+- O usuário responsável pelo cadastro deve ser um usuário administrador.
+
+#
+
+## Cadastro de imagens do carro
+
+**Regras Funcionais**
+
+- Deve ser possível cadastrar a imagem do carro
+
+**Regras de Negócio não Funcionais**
+
+- Utilizar o multer para upload dos arquivos
+
+**Regras de Negócio**
+
+- O usuário deve poder cadastrar mais de uma imagem para o - mesmo carro
+- O usuário responsável pelo cadastro deve ser um usuário - administrador.
+
+#
+
+## Listagem de carros
+
+**Regras Funcionais**
 
 - Deve ser possível listar todos os carros disponíveis
 - Deve ser possível listar todos os carros disponíveis pelo - nome da categoria
 - Deve ser possível listar todos os carros disponíveis pelo - nome da marca
 - Deve ser possível listar todos os carros disponíveis pelo - nome do carro
 
-**RN**
+**Regras de Negócio**
 
 - O usuário não precisar estar logado no sistema.
 
-# Cadastro de Especificação no carro
+#
 
-**RF**
+## Alugel de carro
 
-- Deve ser possível cadastrar uma especificação para um carro
-
-**RN**
-
-- Não deve ser possível cadastrar uma especificação para um - carro não cadastrado.
-- Não deve ser possível cadastrar uma especificação já - existente para o mesmo carro.
-- O usuário responsável pelo cadastro deve ser um usuário - administrador.
-
-# Cadastro de imagens do carro
-
-**RF**
-
-- Deve ser possível cadastrar a imagem do carro
-
-**RNF**
-
-- Utilizar o multer para upload dos arquivos
-
-**RN**
-
-- O usuário deve poder cadastrar mais de uma imagem para o - mesmo carro
-- O usuário responsável pelo cadastro deve ser um usuário - administrador.
-
-# Alugel de carro
-
-**RF**
+**Regras Funcionais**
 
 - Deve ser possível cadastrar um aluguel
 
-**RN**
+**Regras de Negócio**
 
 - O aluguel deve ter duração mínima de 24 horas.
 - Não deve ser possível cadastrar um novo aluguel caso já - exista um aberto para o mesmo usuário
@@ -82,13 +120,15 @@
 - O usuário deve estar logado na aplicação
 - Ao realizar um aluguel, o status do carro deverá ser - alterado para indisponível
 
-# Devolução de carro
+#
 
-**RF**
+## Devolução de carro
+
+**Regras Funcionais**
 
 - Deve ser possível realizar a devolução de um carro
 
-**RN**
+**Regras de Negócio**
 
 - Se o carro for devolvido com menos de 24 horas, deverá - ser cobrado diária completa.
 - Ao realizar a devolução, o carro deverá ser liberado para - outro aluguel.
@@ -98,25 +138,29 @@
 - Caso haja multa, deverá ser somado ao total do aluguel.
 - O usuário deve estar logado na aplicação
 
-# Listagem de Alugueis para usuário
+#
 
-**RF**
+## Listagem de Alugueis para usuário
+
+**Regras Funcionais**
 
 - Deve ser possível realizar a busca de todos os alugueis para o usuário
 
-**RN**
+**Regras de Negócio**
 
 - O usuário deve estar logado na aplicação
 
-# Recuperar Senha
+#
 
-**RF**
+## Recuperar Senha
+
+**Regras Funcionais**
 
 - Deve ser possível o usuário recuperar a senha informando o e-mail
 - O usuário deve receber um e-mail com o passo a passo para a recuperação da senha
 - O usuário deve conseguir inserir uma nova senha
 
-**RN**
+**Regras de Negócio**
 
 - O usuário precisa informar uma nova senha
 - O link enviado para a recuperação deve expirar em 3 horas
